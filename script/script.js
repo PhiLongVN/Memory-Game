@@ -31,6 +31,9 @@ data = [
   { src: './image/blackpaner.png', name: 'blackpaner' },
 ];
 
+let liveScores = 30;
+const lives = document.querySelector('.lives');
+
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -71,21 +74,43 @@ function renderBLock() {
     listImg += block;
     blockContainer.innerHTML = listImg;
   });
+  lives.innerText = liveScores;
+  prepare();
   clickBLock();
 }
 
+/* ============================================ */
+/*                    PREPARE                   */
+/* ============================================ */
+function prepare() {
+  const blockImg = document.querySelectorAll('.blockImg');
+
+  blockImg.forEach((block) => {
+    block.classList.add('flip');
+    block.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+      block.classList.remove('flip');
+      block.style.pointerEvents = 'all';
+    }, 5000);
+  });
+}
 renderBLock();
 
 /* ============================================ */
 /*                     CLICK                    */
 /* ============================================ */
+
 function clickBLock() {
   const blockImg = document.querySelectorAll('.blockImg');
 
   blockImg.forEach((block) => {
     block.addEventListener('click', () => {
-      block.classList.toggle('flip');
-      check();
+      block.classList.add('flip');
+      block.style.pointerEvents = 'none';
+      setTimeout(() => {
+        check(block);
+      }, 1000);
     });
   });
 }
@@ -93,8 +118,68 @@ function clickBLock() {
 /* ============================================ */
 /*                     CHECK                    */
 /* ============================================ */
-function check() {
-  const blockImg = document.querySelectorAll('.flip');
+let count = 0;
+let firstChoose, secondChoose;
 
-  
+function check(target) {
+  if (count === 0) {
+    firstChoose = target;
+    count++;
+  } else {
+    secondChoose = target;
+    count = 0;
+    checkRight(firstChoose, secondChoose);
+  }
 }
+
+function checkRight(firstChoose, secondChoose) {
+  nameFirst = firstChoose.dataset.name;
+  nameSecond = secondChoose.dataset.name;
+  const blockImg = document.querySelectorAll('.blockImg');
+
+  if (nameFirst !== nameSecond) {
+    firstChoose.classList.remove('flip');
+    secondChoose.classList.remove('flip');
+
+    firstChoose.style.pointerEvents = 'all';
+    secondChoose.style.pointerEvents = 'all';
+    setTimeout(() => {
+      liveScores--;
+      lives.innerText = liveScores;
+    }, 100);
+
+    if (liveScores == 1) {
+      blockImg.forEach((key) => {
+        key.classList.remove('flip');
+      });
+      setTimeout(() => {
+        liveScores = 30;
+        renderBLock();
+      }, 2000);
+    }
+  } else {
+    checkRightAll();
+  }
+}
+function checkRightAll() {
+  const blockImg = document.querySelectorAll('.flip');
+  console.log('checkRightAll -> blockImg', blockImg);
+  if (blockImg.length == 30) {
+    blockImg.forEach((key) => {
+      key.classList.remove('flip');
+    });
+    setTimeout(() => {
+      liveScores = 30;
+      renderBLock();
+    }, 2000);
+  }
+}
+/* ============================================ */
+/*                     RESET                    */
+/* ============================================ */
+const resetBtn = document.querySelector('.reset');
+
+resetBtn.addEventListener('click', () => {
+  liveScores = 30;
+  renderBLock();
+});

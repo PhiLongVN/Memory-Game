@@ -110,6 +110,12 @@ body {
           transform: scale(1.2);
 }
 
+.title .lives {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(17, 13, 17, 0.93);
+}
+
 .ten {
   font-weight: 700;
   font-size: 2rem;
@@ -163,6 +169,15 @@ body {
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.block img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .blockImg.flip {
