@@ -89,6 +89,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem 0;
+  gap: 1rem;
 }
 
 .title h1 {
@@ -117,6 +118,7 @@ body {
 }
 
 .ten {
+  text-align: center;
   font-weight: 700;
   font-size: 2rem;
   margin: 2rem auto;
@@ -183,5 +185,18 @@ body {
 .blockImg.flip {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 424.98px) {
+  .title h1 {
+    font-size: 1.5rem;
+  }
+  .block {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

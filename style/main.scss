@@ -70,6 +70,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+  gap: 1rem;
 
   h1 {
     font-weight: 700;
@@ -97,6 +98,7 @@ body {
 }
 
 .ten {
+  text-align: center;
   font-weight: 700;
   font-size: 2rem;
   margin: 2rem auto;
@@ -152,4 +154,17 @@ body {
 
 .blockImg.flip {
   transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 424.98px) {
+  .title {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  .block {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
 }
