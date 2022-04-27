@@ -1,34 +1,34 @@
 data = [
-  { src: './Image/black.png', name: 'black' },
-  { src: './Image/cap.png', name: 'cap' },
-  { src: './Image/deadpool.png', name: 'deadpool' },
-  { src: './Image/falcon.png', name: 'falcon' },
-  { src: './Image/hawkeye.png', name: 'hawkeye' },
-  { src: './Image/hulk.png', name: 'hulk' },
-  { src: './Image/black.png', name: 'black' },
-  { src: './Image/iron.png', name: 'iron' },
-  { src: './Image/shangchi.png', name: 'shangchi' },
-  { src: './Image/spiderman.png', name: 'spiderman' },
-  { src: './Image/thor.png', name: 'thor' },
-  { src: './Image/wanda.png', name: 'wanda' },
-  { src: './Image/wintersolder.png', name: 'wintersolder' },
-  { src: './Image/wolverine.png', name: 'wolverine' },
-  { src: './Image/vision.png', name: 'vision' },
-  { src: './Image/blackpaner.png', name: 'blackpaner' },
-  { src: './Image/cap.png', name: 'cap' },
-  { src: './Image/deadpool.png', name: 'deadpool' },
-  { src: './Image/falcon.png', name: 'falcon' },
-  { src: './Image/hawkeye.png', name: 'hawkeye' },
-  { src: './Image/hulk.png', name: 'hulk' },
-  { src: './Image/iron.png', name: 'iron' },
-  { src: './Image/shangchi.png', name: 'shangchi' },
-  { src: './Image/spiderman.png', name: 'spiderman' },
-  { src: './Image/thor.png', name: 'thor' },
-  { src: './Image/wanda.png', name: 'wanda' },
-  { src: './Image/wintersolder.png', name: 'wintersolder' },
-  { src: './Image/wolverine.png', name: 'wolverine' },
-  { src: './Image/vision.png', name: 'vision' },
-  { src: './Image/blackpaner.png', name: 'blackpaner' },
+  { src: './image/black.png', name: 'black' },
+  { src: './image/cap.png', name: 'cap' },
+  { src: './image/deadpool.png', name: 'deadpool' },
+  { src: './image/falcon.png', name: 'falcon' },
+  { src: './image/hawkeye.png', name: 'hawkeye' },
+  { src: './image/hulk.png', name: 'hulk' },
+  { src: './image/black.png', name: 'black' },
+  { src: './image/iron.png', name: 'iron' },
+  { src: './image/shangchi.png', name: 'shangchi' },
+  { src: './image/spiderman.png', name: 'spiderman' },
+  { src: './image/thor.png', name: 'thor' },
+  { src: './image/wanda.png', name: 'wanda' },
+  { src: './image/wintersolder.png', name: 'wintersolder' },
+  { src: './image/wolverine.png', name: 'wolverine' },
+  { src: './image/vision.png', name: 'vision' },
+  { src: './image/blackpaner.png', name: 'blackpaner' },
+  { src: './image/cap.png', name: 'cap' },
+  { src: './image/deadpool.png', name: 'deadpool' },
+  { src: './image/falcon.png', name: 'falcon' },
+  { src: './image/hawkeye.png', name: 'hawkeye' },
+  { src: './image/hulk.png', name: 'hulk' },
+  { src: './image/iron.png', name: 'iron' },
+  { src: './image/shangchi.png', name: 'shangchi' },
+  { src: './image/spiderman.png', name: 'spiderman' },
+  { src: './image/thor.png', name: 'thor' },
+  { src: './image/wanda.png', name: 'wanda' },
+  { src: './image/wintersolder.png', name: 'wintersolder' },
+  { src: './image/wolverine.png', name: 'wolverine' },
+  { src: './image/vision.png', name: 'vision' },
+  { src: './image/blackpaner.png', name: 'blackpaner' },
 ];
 
 let liveScores = 30;
@@ -67,7 +67,7 @@ function renderBLock() {
     <img src="${key.src}" alt="" />
     </div>
     <div class="back">
-      <img src="./Image/avenger.jpg" alt="" />
+      <img src="./image/avenger.jpg" alt="" />
     </div>
  </div>`;
 
